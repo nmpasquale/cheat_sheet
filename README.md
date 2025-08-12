@@ -1403,6 +1403,17 @@ create role "${ROLENAME}" LOGIN ENCRYPTED PASSWORD 'password1234' NOREPLICATION;
 SELECT rolname FROM pg_roles;
 ```
 
+## Postgres: Show long-running queries:
+```
+SELECT pid, now() - pg_stat_activity.query_start AS duration, query, state FROM pg_stat_activity WHERE (now() - pg_stat_activity.query_start) > interval '5 minutes';
+```
+
+## Postgres: kill long running queries:
+This may not kill it, but it's something you can try from within psql.  Otherwise, kill the pid from the shell. 
+```
+SELECT pg_cancel_backend($PID);
+```
+
 
 -------------------
 # Certificates
