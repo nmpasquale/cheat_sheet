@@ -1419,6 +1419,13 @@ SELECT pg_cancel_backend($PID);
 sudo -u postgres psql -d $DATABASENAME < file.sql
 ```
 
+## Postgres: Run a series of long-running queries without having the system time out:
+```
+systemd-run --user --unit=sqlquery --scope -- nohup bash -c "sudo -u postgres psql -d $DATABASENAME -a < long_running.sql" &
+```
+
+
+
 
 -------------------
 # Certificates
