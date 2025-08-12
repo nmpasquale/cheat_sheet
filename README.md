@@ -1420,10 +1420,18 @@ sudo -u postgres psql -d $DATABASENAME < file.sql
 ```
 
 ## Postgres: Run a series of long-running queries without having the system time out:
+Results will be spooled to ~/nohup.out. 
 ```
 systemd-run --user --unit=sqlquery --scope -- nohup bash -c "sudo -u postgres psql -d $DATABASENAME -a < long_running.sql" &
 ```
-
+You can check on the status of individual queries within this using:
+```
+sudo -u postgres psql -a -c "SELECT pid, now() - pg_stat_activity.query_start AS duration, query, state FROM pg_stat_activity where state is not null order by duration desc;"
+```
+You can check on the overall status of the scoped command using:
+```
+systemctl --user list-units --type=scope
+```
 
 
 
