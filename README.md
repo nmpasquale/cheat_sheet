@@ -1377,6 +1377,12 @@ psql -h localhost -U enterprisedb -d postgres
 ```
 \c DATABASENAME
 ```
+
+## Postgres: List databases:
+```
+\l
+```
+
 ## Postgres: List (or describe) tables:
 ```
 \d [table_name]
