@@ -372,7 +372,7 @@ mailx -R -f $YOURMAILBOX <<< "p :u"
 tail -n +${NUM} file.txt
 ```
 
-## Take a colummn and turn it into a delimited string
+## Take a column and turn it into a delimited string
 This can be done with awk output or a multiline variable:
 ```
 awk '{print $1}' file.txt | paste -d\, -s
