@@ -1414,6 +1414,11 @@ This may not kill it, but it's something you can try from within psql.  Otherwis
 SELECT pg_cancel_backend($PID);
 ```
 
+## Postgres: Run a sql file as a normal user:
+```
+sudo -u postgres psql -d $DATABASENAME < file.sql
+```
+
 
 -------------------
 # Certificates
