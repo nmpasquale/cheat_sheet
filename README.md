@@ -845,6 +845,12 @@ sed -i '/SOMESTRING/ s/^/\#/g' file
 sed -i '/SOMESTRING/d' file
 ```
 
+## Delete all lines in a file up until a certain string:
+```
+sed -i '/SOMESTRING/,$!d' file
+```
+
+
 -------------------
 # awk examples
 
