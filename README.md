@@ -840,16 +840,20 @@ Note that you don't need quotes for the added line. Not sure if escaping somethi
 sed -i '/SOMESTRING/ s/^/\#/g' file
 ```
 
-## Delete lines containing a certain string:
+## Delete all lines containing a certain string:
 ```
 sed -i '/SOMESTRING/d' file
 ```
 
-## Delete all lines in a file up until a certain string:
+## Delete all lines until a certain string (trim the top of a file):
 ```
 sed -i '/SOMESTRING/,$!d' file
 ```
 
+## Delete all lines after a certain string (trim the bottom of a file):
+```
+sed -i sed -e '0,/SOMESTRING/!d' file
+```
 
 -------------------
 # awk examples
