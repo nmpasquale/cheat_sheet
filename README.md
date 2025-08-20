@@ -1,6 +1,9 @@
 [Setup](#setup)
+
 [Troubleshooting](#troubleshooting)
+
 [Vim](#vim)
+
 [sed](#sed-examples)
 
 
@@ -852,7 +855,7 @@ sed -i '/SOMESTRING/,$!d' file
 
 ## Delete all lines after a certain string (trim the bottom of a file):
 ```
-sed -i sed -e '0,/SOMESTRING/!d' file
+sed -i '0,/SOMESTRING/!d' file
 ```
 
 -------------------
